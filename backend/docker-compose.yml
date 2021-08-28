@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  db:
+    container_name: rocketshoes_postgres
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      PGDATA: /data/postgres
+    ports:
+      - '5432:5432'
